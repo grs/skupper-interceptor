@@ -21,7 +21,8 @@ Now create another skupper service that will be the first stage in the chain:
 skupper service create echo 8080 --mapping http
 ```
 
-Deploy the interceptor (update the env vars if changing either of teh service names above):
+Deploy the interceptor (update the env vars if changing either of the
+service names above):
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/grs/skupper-interceptor/main/interceptor.yaml
