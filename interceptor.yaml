@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-interceptor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      application: my-interceptor
+  template:
+    metadata:
+      labels:
+        application: my-interceptor
+    spec:
+      containers:
+      - name: interceptor
+        image: quay.io/gordons/interceptor
+        env:
+        - name: SOURCE
+          value: echo
+        - name: TARGET
+          value: echo-impl
+        volumeMounts:
+        - name: connect
+          mountPath: "/etc/messaging/"
+          readOnly: true
+      volumes:
+      - name: connect
+        secret:
+          secretName: skupper-local-client

@@ -1,0 +1,14 @@
+{
+    "name": "interceptor",
+    "version": "0.0.1",
+    "description": "Example of a skupper interceptor",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/grs/skupper-interceptor"
+    },
+    "dependencies": {
+        "debug": "*",
+        "rhea": "*"
+    }
+}
