@@ -6,7 +6,7 @@ First deploy some kind of service. I use a simple http echo that
 returns whatever is POSTed to it:
 
 ```
-kubectl create deployment echo-impl --image quay.io/gordons/echo --port 8080
+kubectl create deployment echo-impl --image quay.io/gordons/http-echo --port 8080
 ```
 
 Expose this via skupper:
